@@ -10,7 +10,10 @@ class Profile extends Controller
 {
     public function index()
     {
-        $user = Auth()->user();
-        return view('profile.index', $user);
+        // dd(User::all());
+        // $user = Auth()->user();
+        $user = User::with('roles')->first();
+        dd($user);
+        return view('profile.index', ['user' => $user]);
     }
 }

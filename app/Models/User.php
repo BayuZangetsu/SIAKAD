@@ -50,4 +50,8 @@ class User extends Authenticatable
         $user = User::find(Auth()->user()->getAuthIdentifier());
         return asset('image/userImage/' . $user->photo);
     }
+    public function roles()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
 }
