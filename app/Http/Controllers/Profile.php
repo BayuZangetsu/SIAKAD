@@ -12,8 +12,11 @@ class Profile extends Controller
     {
         // dd(User::all());
         // $user = Auth()->user();
-        $user = User::with('roles')->get();
+
+        $user = User::with('roles')->find(Auth()->user()->getAuthIdentifier());
         // dd($user);
-        return view('profile.index', ['user' => $user]);
+        // $user = User::with('roles')->get();
+        // dd(compact($user));
+        return view('profile.index', $user);
     }
 }
