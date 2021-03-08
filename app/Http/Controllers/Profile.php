@@ -12,8 +12,8 @@ class Profile extends Controller
     {
         // dd(User::all());
         // $user = Auth()->user();
-        $user = User::with('roles')->first();
-        dd($user);
+        $user = User::with('roles')->get();
+        // dd($user);
         return view('profile.index', ['user' => $user]);
     }
 }

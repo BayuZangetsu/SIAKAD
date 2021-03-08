@@ -26,7 +26,7 @@ class users extends Seeder
                 'phone' => $faker->phoneNumber,
                 'email' => $faker->email,
                 'role' => $faker->numberBetween(1, 3),
-                'password' => bcrypt(123456)
+                'password' => bcrypt(12345678)
             ]);
         }
     }

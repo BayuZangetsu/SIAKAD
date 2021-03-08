@@ -10,6 +10,7 @@ class Role extends Model
     use HasFactory;
     public function users()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->hasOne('App\Models\User', 'id');
+        // return $this->hasMany('App\Models\User');
     }
 }

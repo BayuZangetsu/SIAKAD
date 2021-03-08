@@ -14,11 +14,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($user ?? '' as $u)
+        @foreach($user as $u)
         <tr>
         <td>{{$u->name}}</td>
         <td>{{$u->role}}</td>
-        <td>{{$u->desc}}</td>
+        <td>{{$u->roles->desc}}</td>
         </tr>
             
         @endforeach
